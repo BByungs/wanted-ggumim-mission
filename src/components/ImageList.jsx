@@ -13,20 +13,41 @@ const Img = styled.img`
 `;
 
 const ImgWrapper = styled.div`
+  position: relative;
   margin: 10px 5px 10px 10px;
-  border-radius: 8px;
+  border-radius: 16px;
   width: 106px;
   height: 106px;
   cursor: pointer;
   overflow: hidden;
   border: 2px solid #b2b6bc;
   display: flex;
+  z-index: 0;
   &:focus {
     border: 2px solid #e77596;
   }
 `;
 
+const DiscountRate = styled.div`
+  position: absolute;
+  top: 0;
+  right: 5px;
+  background-image: url('http://cdn.ggumim.co.kr/storage/20211117191419RW6JS6bjRm.png');
+  background-position: center center;
+  background-size: contain;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+  color: white;
+  padding-left: 1px;
+  font-size: 11px;
+  width: 24px;
+  height: 28px;
+  z-index: 1;
+`;
+
 const ImageList = ({ data }) => {
+  console.log(data);
   const imgClick = (id) => {
     document.getElementById(`${id}`).focus();
   };
@@ -40,6 +61,11 @@ const ImageList = ({ data }) => {
           onClick={() => imgClick(el.productId)}
         >
           <Img src={el.imageUrl} />
+          {!el.outside && (
+            <DiscountRate>
+              <span>{el.discountRate}%</span>
+            </DiscountRate>
+          )}
         </ImgWrapper>
       ))}
     </Wrapper>
