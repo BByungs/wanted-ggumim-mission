@@ -10,13 +10,13 @@ const RootContainer = styled.div`
 `;
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const getApi = () => {
     axios
       .get(`${process.env.REACT_APP_API}`)
       .then((res) => {
-        if (!data.length) {
-          setData((prev) => [...prev, res.data]);
+        if (!data) {
+          setData(res.data);
         }
       })
       .catch((err) => alert(err));
@@ -30,7 +30,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <RootContainer>
-        <ImageList data={data[0]} />
+        <ImageList data={data} />
       </RootContainer>
     </>
   );
