@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useEffect } from "react";
+import ImageList from "components/ImageList";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import GlobalStyle from "styles/GlobalStyle";
 
@@ -9,31 +10,27 @@ const RootContainer = styled.div`
 `;
 
 const App = () => {
-  const getApi = async () => {
-    try {
-      const apiData = JSON.parse(localStorage.getItem("apiData")) || [];
-      if (apiData.length === 0) {
-        const getData = await axios.get(`${process.env.REACT_APP_API}`);
-        apiData.push(getData.data);
-        localStorage.setItem("apiData", JSON.stringify(apiData));
-      }
-    } catch (err) {
-      return alert(err);
-    }
+  const [data, setData] = useState([]);
+  const getApi = () => {
+    axios
+      .get(`${process.env.REACT_APP_API}`)
+      .then((res) => {
+        if (!data.length) {
+          setData((prev) => [...prev, res.data]);
+        }
+      })
+      .catch((err) => alert(err));
   };
 
   useEffect(() => {
     getApi();
   }, []);
 
-  // Component에 data를 setter로 받아서 쓰면 됨
-  const data = JSON.parse(localStorage.getItem("apiData"))[0] || [];
-
   return (
     <>
       <GlobalStyle />
       <RootContainer>
-        <div>Test</div>
+        <ImageList data={data[0]} />
       </RootContainer>
     </>
   );
