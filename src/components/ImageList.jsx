@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
-  overflow: scroll;
 `;
 
 const Img = styled.img`
-  &:nth-child(1) {
-    width: 100%;
-    height: 100%;
-  }
+  width: 106px;
+  height: 106px;
+  border-radius: 14px;
 `;
 
 const ImgWrapper = styled.div`
@@ -19,7 +17,6 @@ const ImgWrapper = styled.div`
   width: 106px;
   height: 106px;
   cursor: pointer;
-  overflow: hidden;
   border: 2px solid #b2b6bc;
   display: flex;
   z-index: 0;
@@ -30,7 +27,7 @@ const ImgWrapper = styled.div`
 
 const DiscountRate = styled.div`
   position: absolute;
-  top: 0;
+  top: 0px;
   right: 5px;
   background-image: url('http://cdn.ggumim.co.kr/storage/20211117191419RW6JS6bjRm.png');
   background-position: center center;
@@ -39,7 +36,6 @@ const DiscountRate = styled.div`
   line-height: 25px;
   font-weight: bold;
   color: white;
-  padding-left: 1px;
   font-size: 11px;
   width: 24px;
   height: 28px;
