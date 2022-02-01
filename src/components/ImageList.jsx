@@ -12,7 +12,7 @@ const Img = styled.img`
 
 const ImgWrapper = styled.div`
   position: relative;
-  margin: 10px 5px 10px 10px;
+  margin: 25px 5px 10px 10px;
   border-radius: 16px;
   width: 106px;
   height: 106px;
@@ -43,7 +43,6 @@ const DiscountRate = styled.div`
 `;
 
 const ImageList = ({ data }) => {
-  console.log(data);
   const imgClick = (id) => {
     document.getElementById(`${id}`).focus();
   };
