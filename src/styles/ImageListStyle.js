@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ImgWrapper = styled.div`
   position: relative;
@@ -7,19 +7,17 @@ export const ImgWrapper = styled.div`
   width: 106px;
   height: 106px;
   cursor: pointer;
-  border: 2px solid #b2b6bc;
   display: flex;
   z-index: 0;
-  &:focus {
-    border: 2px solid #e77596;
-  }
+  border: ${(props) =>
+    !props.focus ? "2px solid #b2b6bc" : "2px solid #e77596"};
 `;
 
 export const DiscountRate = styled.div`
   position: absolute;
   top: 0px;
   right: 5px;
-  background-image: url('http://cdn.ggumim.co.kr/storage/20211117191419RW6JS6bjRm.png');
+  background-image: url("http://cdn.ggumim.co.kr/storage/20211117191419RW6JS6bjRm.png");
   background-position: center center;
   background-size: contain;
   text-align: center;
