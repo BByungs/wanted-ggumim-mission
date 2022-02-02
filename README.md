@@ -31,7 +31,7 @@
 - 툴팁 on/off 
 - 툴팁에 내용표시(할인된 상품은 할인율 따로 표시)
 - Background 밑에 ImageList 구현
-- ImageList의 상품 사진에 할인중인 상품은 할인율 
+- ImageList의 상품 사진에 할인중인 상품은 할인율 표시
 - 상품 이미지 클릭시 툴팁 on/off 되게 구현 (focus도 같이 연동됨)
 - 툴팁에서 on/off시 focus연동
 
