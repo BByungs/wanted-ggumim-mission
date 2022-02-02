@@ -25,7 +25,7 @@ export const ToolTipWrapper = styled.div`
     background-repeat: no-repeat;
     z-index: 1100;
     box-sizing: border-box;
-    top: ${(props) => (props.pointX >= 319 ? '102px' : '-8px')};
+    top: ${(props) => (props.pointX >= 319 ? '101px' : '-7px')};
     right: ${(props) => (props.pointY < 270 ? '205px' : '10px')};
     ${(props) =>
       props.pointX >= 319 && {
