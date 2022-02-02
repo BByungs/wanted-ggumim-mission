@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ToolTipWrapper = styled.div`
   display: flex;
@@ -9,28 +9,27 @@ export const ToolTipWrapper = styled.div`
   width: 220px;
   height: 86px;
   padding: 8px 0 8px 8px;
-  margin-top: ${(props) => (props.pointX >= 319 ? "-150px" : "0px")};
+  margin-top: ${(props) => (props.pointX >= 319 ? '-150px' : '0px')};
   border-radius: 14px;
-  right: ${(props) => (props.pointY < 270 ? "" : "1px")};
+  right: ${(props) => (props.pointY < 270 ? '' : '1px')};
   color: #4a4a4a;
-  margin-bottom: ${(props) => (props.pointX >= 319 ? "0px" : "100px")};
+  margin-bottom: ${(props) => (props.pointX >= 319 ? '0px' : '100px')};
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 12px;
     height: 8px;
-    background-image: url("https://cdn.ggumim.co.kr/storage/20211118152728RO3OXnhkrC.png");
+    background-image: url('https://cdn.ggumim.co.kr/storage/20211118152728RO3OXnhkrC.png');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1100;
     box-sizing: border-box;
-    margin-top: ${(props) => (props.pointX >= 319 ? "110px" : "0px")};
-    margin-bottom: ${(props) => (props.pointX >= 319 ? "0px" : "110px")};
-    right: ${(props) => (props.pointY < 270 ? "205px" : "10px")};
+    top: ${(props) => (props.pointX >= 319 ? '102px' : '-8px')};
+    right: ${(props) => (props.pointY < 270 ? '205px' : '10px')};
     ${(props) =>
       props.pointX >= 319 && {
-        transform: "rotate(180deg)",
+        transform: 'rotate(180deg)',
       }};
   }
 `;
