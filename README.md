@@ -1,4 +1,4 @@
-# 🎉 Deploy Link
+# 🎉 Link of Deploy
 <a href="https://bbyungs-ggumim.netlify.app/" target="_blank">https://bbyungs-ggumim.netlify.app/</a>
 
 # 🎉 Directory Structure
