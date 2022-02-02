@@ -9,10 +9,12 @@ export const ToolTipWrapper = styled.div`
   width: 220px;
   height: 86px;
   padding: 8px 0 8px 8px;
-  margin-top: -150px;
+  margin-top: ${(props) => (props.pointX >= 319 ? "-150px" : "0px")};
   border-radius: 14px;
   right: ${(props) => (props.pointY < 270 ? "" : "1px")};
   color: #4a4a4a;
+  margin-bottom: ${(props) => (props.pointX >= 319 ? "0px" : "100px")};
+
   &:before {
     content: "";
     position: absolute;
@@ -23,38 +25,13 @@ export const ToolTipWrapper = styled.div`
     background-repeat: no-repeat;
     z-index: 1100;
     box-sizing: border-box;
-    margin-top: 110px;
+    margin-top: ${(props) => (props.pointX >= 319 ? "110px" : "0px")};
+    margin-bottom: ${(props) => (props.pointX >= 319 ? "0px" : "110px")};
     right: ${(props) => (props.pointY < 270 ? "205px" : "10px")};
-    transform: rotate(180deg);
-  }
-`;
-
-export const ToolTipAfterWrapper = styled.div`
-  display: flex;
-  z-index: 1000;
-  align-items: center;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 220px;
-  height: 86px;
-  padding: 8px 0 8px 8px;
-  margin-top: 16px;
-  border-radius: 14px;
-  right: ${(props) => (props.pointY < 270 ? "" : "1px")};
-  color: #4a4a4a;
-  margin-bottom: 100px;
-  &:after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 8px;
-    background-image: url("https://cdn.ggumim.co.kr/storage/20211118152728RO3OXnhkrC.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1100;
-    box-sizing: border-box;
-    margin-bottom: 110px;
-    right: ${(props) => (props.pointY < 270 ? "205px" : "10px")};
+    ${(props) =>
+      props.pointX > 319 && {
+        transform: "rotate(180deg)",
+      }};
   }
 `;
 
