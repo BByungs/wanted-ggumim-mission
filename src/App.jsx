@@ -7,7 +7,7 @@ const App = () => {
   const [data, setData] = useState(null);
   const getApi = () => {
     axios
-      .get(`${process.env.REACT_APP_API}`)
+      .get("https://cdn.ggumim.co.kr/test/image_product_link.json")
       .then((res) => {
         if (!data) {
           res.data.productList.forEach((product) => {
