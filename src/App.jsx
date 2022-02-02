@@ -13,7 +13,6 @@ const App = () => {
           res.data.productList.forEach((product) => {
             product.focus = false;
           });
-          console.log(res.data);
           setData(res.data);
         }
       })
@@ -27,7 +26,7 @@ const App = () => {
   return (
     <React.Fragment>
       <GlobalStyle />
-      <InfoInPhoto image={data?.imageUrl} data={data} />
+      <InfoInPhoto image={data?.imageUrl} data={data} setData={setData} />
     </React.Fragment>
   );
 };
