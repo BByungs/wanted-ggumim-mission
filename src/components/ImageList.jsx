@@ -1,6 +1,6 @@
-import Img from 'common/Img';
-import Wrapper from 'common/Wrapper';
-import { DiscountRate, ImgWrapper } from 'styles/ImageListStyle';
+import Img from "common/Img";
+import Wrapper from "common/Wrapper";
+import { DiscountRate, ImgWrapper } from "styles/ImageListStyle";
 
 const ImageList = ({ data }) => {
   const imgClick = (id) => {
@@ -16,9 +16,9 @@ const ImageList = ({ data }) => {
           onClick={() => imgClick(el.productId)}
         >
           <Img
-            src={el.imageUrl}
+            src={`https:${el.imageUrl}`}
             alt={el.productName}
-            style={{ width: '106px', height: '106px', borderRadius: '14px' }}
+            style={{ width: "106px", height: "106px", borderRadius: "14px" }}
           />
           {!el.outside && (
             <DiscountRate>
