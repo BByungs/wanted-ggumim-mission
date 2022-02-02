@@ -1,7 +1,7 @@
-import axios from 'axios';
-import InfoInPhoto from 'components/InfoInPhoto';
-import React, { useEffect, useState } from 'react';
-import GlobalStyle from 'styles/GlobalStyle';
+import axios from "axios";
+import InfoInPhoto from "components/InfoInPhoto";
+import React, { useEffect, useState } from "react";
+import GlobalStyle from "styles/GlobalStyle";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -10,6 +10,10 @@ const App = () => {
       .get(`${process.env.REACT_APP_API}`)
       .then((res) => {
         if (!data) {
+          res.data.productList.forEach((product) => {
+            product.focus = false;
+          });
+          console.log(res.data);
           setData(res.data);
         }
       })
