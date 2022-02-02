@@ -1,2 +1,2 @@
 # Deploy Link
-<a href="https://vibrant-ptolemy-807f00.netlify.app/" target="_blank">https://vibrant-ptolemy-807f00.netlify.app/</a>
+<a href=https://bbyungs-ggumim.netlify.app/" target="_blank">https://bbyungs-ggumim.netlify.app/</a>
