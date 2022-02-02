@@ -29,7 +29,7 @@ export const ToolTipWrapper = styled.div`
     margin-bottom: ${(props) => (props.pointX >= 319 ? "0px" : "110px")};
     right: ${(props) => (props.pointY < 270 ? "205px" : "10px")};
     ${(props) =>
-      props.pointX > 319 && {
+      props.pointX >= 319 && {
         transform: "rotate(180deg)",
       }};
   }
