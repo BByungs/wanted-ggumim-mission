@@ -20,7 +20,6 @@
 │   ├── InfoInPhotoStyle.js
 │   └── TooltipStyle.js
 ├── utils
-│   └── .gitkeep
-└── utils
     └── .gitkeep
+
 ```
