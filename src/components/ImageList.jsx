@@ -1,22 +1,8 @@
-import Img from "common/Img";
-import Wrapper from "common/Wrapper";
+import {Img, Wrapper} from "common";
 import { DiscountRate, ImgWrapper } from "styles/ImageListStyle";
+import { imgClick } from "utils/utilFuncs"
 
 const ImageList = ({ data, setData }) => {
-  const imgClick = (id, idx) => {
-    if (data.productList[idx].focus) {
-      document.getElementById(`${id}`).focus();
-    }
-    const copyData = { ...data };
-    copyData.productList.forEach((el, productIdx) => {
-      if (productIdx === idx) {
-        el.focus = !el.focus;
-      } else {
-        el.focus = false;
-      }
-    });
-    setData(copyData);
-  };
   return (
     <Wrapper>
       {data?.productList.map((el, idx) => (
@@ -25,7 +11,7 @@ const ImageList = ({ data, setData }) => {
           id={el.productId}
           tabIndex="0"
           focus={el.focus}
-          onClick={() => imgClick(el.productId, idx)}
+          onClick={() => imgClick(el.productId, idx, data, setData)}
         >
           <Img
             src={`https:${el.imageUrl}`}
