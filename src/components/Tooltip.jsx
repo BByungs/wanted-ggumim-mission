@@ -1,4 +1,4 @@
-import Wrapper from "common/Wrapper";
+import { Wrapper } from "common";
 import Img from "common/Img";
 import {
   Desc,
