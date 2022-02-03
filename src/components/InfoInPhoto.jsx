@@ -1,12 +1,12 @@
-import Img from "common/Img";
-import Wrapper from "common/Wrapper";
-import React from "react";
-import { Background, ImgWrapper, ScrollWrapper } from "styles/InfoInPhotoStyle";
-import ImageList from "./ImageList";
-import Tooltip from "./Tooltip";
+import Img from 'common/Img';
+import Wrapper from 'common/Wrapper';
+import React from 'react';
+import { Background, ImgWrapper, ScrollWrapper } from 'styles/InfoInPhotoStyle';
+import ImageList from './ImageList';
+import Tooltip from './Tooltip';
 
 const InfoInPhoto = ({ image, data, setData }) => {
-  const onClickClose = (idx) => {
+  const handleClose = (idx) => {
     const copyData = { ...data };
     copyData.productList.forEach((el, productIdx) => {
       if (productIdx === idx) {
@@ -16,7 +16,7 @@ const InfoInPhoto = ({ image, data, setData }) => {
     setData(copyData);
   };
 
-  const onClickMagnifier = (idx) => {
+  const handleMagnifier = (idx) => {
     const copyData = { ...data };
     copyData.productList.forEach((el, productIdx) => {
       if (productIdx === idx) {
@@ -28,23 +28,33 @@ const InfoInPhoto = ({ image, data, setData }) => {
     setData(copyData);
   };
 
+  const handleBackground = (e) => {
+    if (e.target.localName === 'div') {
+      const copyData = { ...data };
+      copyData.productList.forEach((el) => {
+        el.focus = false;
+      });
+      setData(copyData);
+    }
+  };
+
   return (
-    <Wrapper style={{ flexDirection: "column" }}>
-      <Background image={image}>
+    <Wrapper style={{ flexDirection: 'column' }}>
+      <Background image={image} onClick={handleBackground}>
         {data?.productList.map((el, idx) => (
           <ImgWrapper key={el.productId} pointX={el.pointX} pointY={el.pointY}>
             {el.focus ? (
               <React.Fragment>
                 <Img
                   src={
-                    "https://cdn.ggumim.co.kr/storage/20211029145330GwwumnWNSs.png"
+                    'https://cdn.ggumim.co.kr/storage/20211029145330GwwumnWNSs.png'
                   }
-                  onClick={() => onClickClose(idx)}
+                  onClick={() => handleClose(idx)}
                   alt="close"
                   style={{
-                    width: "32px",
-                    height: "32px",
-                    position: "relative",
+                    width: '32px',
+                    height: '32px',
+                    position: 'relative',
                   }}
                 />
                 <Tooltip
@@ -59,11 +69,11 @@ const InfoInPhoto = ({ image, data, setData }) => {
             ) : (
               <Img
                 src={
-                  "https://cdn.ggumim.co.kr/storage/20211029145238AlZrQ41xtg.png"
+                  'https://cdn.ggumim.co.kr/storage/20211029145238AlZrQ41xtg.png'
                 }
-                onClick={() => onClickMagnifier(idx)}
+                onClick={() => handleMagnifier(idx)}
                 alt="magnifier"
-                style={{ width: "32px", height: "32px" }}
+                style={{ width: '32px', height: '32px' }}
               />
             )}
           </ImgWrapper>
