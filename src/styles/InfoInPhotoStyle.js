@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ScrollWrapper = styled.div`
   width: 800px;
@@ -13,6 +13,7 @@ export const Background = styled.div`
   height: 998.39px;
   position: relative;
   display: inline-block;
+  cursor: pointer;
 `;
 
 export const ImgWrapper = styled.div`
