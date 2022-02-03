@@ -29,7 +29,7 @@ const InfoInPhoto = ({ image, data, setData }) => {
   };
 
   const handleBackground = (e) => {
-    if (e.target.localName === 'div') {
+    if (e.target.localName === 'div' && e.target.childNodes.length >= 7) {
       const copyData = { ...data };
       copyData.productList.forEach((el) => {
         el.focus = false;
