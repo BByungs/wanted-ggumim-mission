@@ -8,19 +8,21 @@
 ├── assets
 │   └── .gitkeep	
 ├── common
+│   ├── Wrapper.jsx
 │   ├── Img.jsx
-│   └── Wrapper.jsx
+│   └── index.js
 ├── components		
 │   ├── ImageList.jsx
 │   ├── InfoInPhoto.jsx
-│   └── Tooltip.jsx
+│   ├── Tooltip.jsx
+│   └── index.js
 ├── styles
 │   ├── GlobalStyle.js
 │   ├── ImageListStyle.js
 │   ├── InfoInPhotoStyle.js
 │   └── TooltipStyle.js
 └── utils
-    └── .gitkeep
+    └── utilFuncs.js
 
 ```
 
