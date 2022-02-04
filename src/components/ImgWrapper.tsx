@@ -1,3 +1,4 @@
+import { ImgWrapperProps } from 'types/types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -12,12 +13,6 @@ const Wrapper = styled.div`
   border: ${({ focus }: { focus: boolean }) =>
     !focus ? '2px solid #b2b6bc' : '2px solid #e77596'};
 `;
-
-interface ImgWrapperProps {
-  focus: boolean;
-  children: React.ReactNode;
-  onClick: React.MouseEventHandler;
-}
 
 const ImgWrapper = (props: ImgWrapperProps): JSX.Element => {
   return (

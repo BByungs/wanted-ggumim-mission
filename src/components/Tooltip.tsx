@@ -1,4 +1,5 @@
 import { Wrapper, Img } from 'common';
+import { TooltipType } from 'types/types';
 import {
   Desc,
   DiscountRate,
@@ -8,15 +9,6 @@ import {
   ProductImage,
   ToolTipWrapper,
 } from 'styles/TooltipStyle';
-
-type TooltipType = {
-  image: string;
-  productName: string;
-  discountRate: number;
-  priceDiscount: number;
-  pointX: number;
-  pointY: number;
-};
 
 const Tooltip = ({
   image,
