@@ -11,6 +11,21 @@ export type ProductListType = {
   focus: boolean;
 };
 
+export type TooltipType = {
+  image: string;
+  productName: string;
+  discountRate: number;
+  priceDiscount: number;
+  pointX: number;
+  pointY: number;
+};
+
+export type ImgWrapperProps = {
+  focus: boolean;
+  children: React.ReactNode;
+  onClick: React.MouseEventHandler;
+};
+
 export type ApiDataType = {
   id: string;
   imageUrl: string;
