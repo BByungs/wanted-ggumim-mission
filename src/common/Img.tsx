@@ -7,7 +7,7 @@ type ImgType = {
   style?: StyleType;
 };
 
-const Img = ({ src, alt, style, onClick }: ImgType) => {
+const Img = ({ src, alt, style, onClick }: ImgType): JSX.Element => {
   return <img src={src} alt={alt} onClick={onClick} style={{ ...style }} />;
 };
 

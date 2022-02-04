@@ -4,7 +4,9 @@ type InfoInPhotoWrapperType = {
   children: React.ReactNode;
 };
 
-const InfoInPhotoWrapper = ({ children }: InfoInPhotoWrapperType) => {
+const InfoInPhotoWrapper = ({
+  children,
+}: InfoInPhotoWrapperType): JSX.Element => {
   return (
     <Wrapper
       style={{

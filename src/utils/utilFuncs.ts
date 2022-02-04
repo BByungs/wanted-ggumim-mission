@@ -4,7 +4,7 @@ import axios from 'axios';
 const getApi = (
   data: ApiDataType | null,
   setData: React.Dispatch<React.SetStateAction<ApiDataType | null>>
-) => {
+): void => {
   axios
     .get('https://cdn.ggumim.co.kr/test/image_product_link.json')
     .then((res) => {
@@ -22,7 +22,7 @@ const handleMagnifier = (
   idx: number,
   data: ApiDataType,
   setData: React.Dispatch<React.SetStateAction<ApiDataType | null>>
-) => {
+): void => {
   const copyData = { ...data };
   copyData.productList.forEach((el: ProductListType, productIdx: number) => {
     if (productIdx === idx) {
@@ -38,7 +38,7 @@ const handleClose = (
   idx: number,
   data: ApiDataType,
   setData: React.Dispatch<React.SetStateAction<ApiDataType | null>>
-) => {
+): void => {
   const copyData = { ...data };
   copyData.productList.forEach((el: ProductListType, productIdx: number) => {
     if (productIdx === idx) {
@@ -52,7 +52,7 @@ const imgClick = (
   idx: number,
   data: ApiDataType,
   setData: React.Dispatch<React.SetStateAction<ApiDataType | null>>
-) => {
+): void => {
   const copyData = { ...data };
   copyData.productList.forEach((el: ProductListType, productIdx: number) => {
     if (productIdx === idx) {

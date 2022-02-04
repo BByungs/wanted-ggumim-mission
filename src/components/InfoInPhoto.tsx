@@ -5,7 +5,11 @@ import { handleMagnifier, handleClose } from 'utils/utilFuncs';
 import { ProductListType, InfoInPhotoType } from 'types/types';
 import { Background, ImgWrapper, ScrollWrapper } from 'styles/InfoInPhotoStyle';
 
-const InfoInPhoto = ({ image, data, setData }: InfoInPhotoType) => {
+const InfoInPhoto = ({
+  image,
+  data,
+  setData,
+}: InfoInPhotoType): JSX.Element => {
   const handleBackground = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as HTMLDivElement;
     if (target.localName === 'div' && target.childNodes.length >= 7) {
