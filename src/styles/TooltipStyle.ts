@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+type ToolTipWrapperType = {
+  pointX: number;
+  pointY: number;
+};
+
+type ProductImageType = {
+  image: string;
+};
+
 export const ToolTipWrapper = styled.div`
   display: flex;
   z-index: 1000;
@@ -9,12 +18,13 @@ export const ToolTipWrapper = styled.div`
   width: 220px;
   height: 86px;
   padding: 8px 0 8px 8px;
-  margin-top: ${(props) => (props.pointX >= 319 ? '-150px' : '0px')};
+  margin-top: ${(props: ToolTipWrapperType) =>
+    props.pointX >= 319 ? '-150px' : '0px'};
   border-radius: 14px;
-  right: ${(props) => (props.pointY < 270 ? '' : '1px')};
+  right: ${(props: ToolTipWrapperType) => (props.pointY < 270 ? '' : '1px')};
   color: #4a4a4a;
-  margin-bottom: ${(props) => (props.pointX >= 319 ? '0px' : '100px')};
-
+  margin-bottom: ${(props: ToolTipWrapperType) =>
+    props.pointX >= 319 ? '0px' : '100px'};
   &:before {
     content: '';
     position: absolute;
@@ -25,9 +35,11 @@ export const ToolTipWrapper = styled.div`
     background-repeat: no-repeat;
     z-index: 1100;
     box-sizing: border-box;
-    top: ${(props) => (props.pointX >= 319 ? '101px' : '-7px')};
-    right: ${(props) => (props.pointY < 270 ? '205px' : '10px')};
-    ${(props) =>
+    top: ${(props: ToolTipWrapperType) =>
+      props.pointX >= 319 ? '101px' : '-7px'};
+    right: ${(props: ToolTipWrapperType) =>
+      props.pointY < 270 ? '205px' : '10px'};
+    ${(props: ToolTipWrapperType) =>
       props.pointX >= 319 && {
         transform: 'rotate(180deg)',
       }};
@@ -41,7 +53,7 @@ export const ProductImage = styled.div`
   background-size: cover;
   background-position: center;
   border-radius: 4px;
-  background-image: url(${(props) => props.image});
+  background-image: url(${(props: ProductImageType) => props.image});
 `;
 
 export const Desc = styled.div`
