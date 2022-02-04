@@ -10,10 +10,8 @@ const ImageList = ({ data, setData }: ImageListType): JSX.Element => {
       {data?.productList.map((el: ProductListType, idx: number) => (
         <ImgWrapper
           key={el.productId}
-          id={el.productId}
-          tabIndex="0"
           focus={el.focus}
-          onClick={() => imgClick(el.productId, idx, data, setData)}
+          onClick={() => imgClick(idx, data, setData)}
         >
           <Img
             src={`https:${el.imageUrl}`}
