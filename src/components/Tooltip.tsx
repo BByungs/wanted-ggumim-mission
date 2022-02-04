@@ -1,5 +1,4 @@
-import { Wrapper } from "common";
-import Img from "common/Img";
+import { Wrapper, Img } from 'common';
 import {
   Desc,
   DiscountRate,
@@ -8,7 +7,16 @@ import {
   PriceDiscount,
   ProductImage,
   ToolTipWrapper,
-} from "styles/TooltipStyle";
+} from 'styles/TooltipStyle';
+
+type TooltipType = {
+  image: string;
+  productName: string;
+  discountRate: number;
+  priceDiscount: number;
+  pointX: number;
+  pointY: number;
+};
 
 const Tooltip = ({
   image,
@@ -17,17 +25,17 @@ const Tooltip = ({
   priceDiscount,
   pointX,
   pointY,
-}) => {
+}: TooltipType): JSX.Element => {
   return (
     <ToolTipWrapper pointX={pointX} pointY={pointY}>
-      <ProductImage image={image}></ProductImage>
+      <ProductImage image={image} />
       <Desc>
         <FunitureName>{productName}</FunitureName>
         <Wrapper
           style={{
-            alignItems: "center",
-            marginTop: "4px",
-            marginBottom: "10px",
+            alignItems: 'center',
+            marginTop: '4px',
+            marginBottom: '10px',
           }}
         >
           {discountRate === 0 ? (
@@ -45,16 +53,16 @@ const Tooltip = ({
       </Desc>
       <Wrapper
         style={{
-          alignItems: "flex-end",
-          marginTop: "auto",
-          marginRight: "2px",
-          marginBottom: "10px",
+          alignItems: 'flex-end',
+          marginTop: 'auto',
+          marginRight: '2px',
+          marginBottom: '10px',
         }}
       >
         <Img
-          src={"https://cdn.ggumim.co.kr/storage/20211102181936xqHzyWAmb8.png"}
+          src={'https://cdn.ggumim.co.kr/storage/20211102181936xqHzyWAmb8.png'}
           alt="viewProduct"
-          style={{ width: "20px", height: "20px" }}
+          style={{ width: '20px', height: '20px' }}
         />
       </Wrapper>
     </ToolTipWrapper>
