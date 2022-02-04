@@ -49,15 +49,10 @@ const handleClose = (
 };
 
 const imgClick = (
-  id: number,
   idx: number,
   data: ApiDataType,
   setData: React.Dispatch<React.SetStateAction<ApiDataType | null>>
 ) => {
-  let elem: HTMLElement | null = document.getElementById(`${id}`);
-  if (data.productList[idx].focus && elem) {
-    elem.focus();
-  }
   const copyData = { ...data };
   copyData.productList.forEach((el: ProductListType, productIdx: number) => {
     if (productIdx === idx) {
