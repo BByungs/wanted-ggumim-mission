@@ -4,25 +4,30 @@
 # 🎉 Directory Structure
 ```
 .
-├── App.jsx
+├── App.tsx
 ├── assets
 │   └── .gitkeep	
 ├── common
-│   ├── Wrapper.jsx
-│   ├── Img.jsx
-│   └── index.js
+│   ├── Wrapper.tsx
+│   ├── Img.tsx
+│   └── index.ts
 ├── components		
-│   ├── ImageList.jsx
-│   ├── InfoInPhoto.jsx
-│   ├── Tooltip.jsx
-│   └── index.js
+│   ├── InfoInPhoto.tsx
+│   ├── ImageList.tsx
+│   ├── Tooltip.tsx
+│   ├── ImgWrapper.tsx
+│   ├── InfoInPhotoWrapper.tsx
+│   └── index.ts
 ├── styles
-│   ├── GlobalStyle.js
-│   ├── ImageListStyle.js
-│   ├── InfoInPhotoStyle.js
-│   └── TooltipStyle.js
+│   ├── GlobalStyle.ts
+│   ├── ImageListStyle.ts
+│   ├── InfoInPhotoStyle.ts
+│   └── TooltipStyle.ts
+├── types
+│   └── types.ts
+│
 └── utils
-    └── utilFuncs.js
+    └── utilFuncs.ts
 
 ```
 
