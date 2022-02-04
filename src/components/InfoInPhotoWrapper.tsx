@@ -1,10 +1,10 @@
 import Wrapper from 'common/Wrapper';
 
-type InfoInPhotoWrapper = {
+type InfoInPhotoWrapperType = {
   children: React.ReactNode;
 };
 
-const InfoInPhotoWrapper = ({ children }: InfoInPhotoWrapper) => {
+const InfoInPhotoWrapper = ({ children }: InfoInPhotoWrapperType) => {
   return (
     <Wrapper
       style={{
