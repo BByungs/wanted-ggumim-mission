@@ -23,7 +23,7 @@
 │   ├── ImageListStyle.ts
 │   ├── InfoInPhotoStyle.ts
 │   └── TooltipStyle.ts
-└── types
+├── types
 │   └── types.ts
 │
 └── utils
